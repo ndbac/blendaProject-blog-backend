@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 
-//create schema object
-
+//create schema
 const userSchema = new mongoose.Schema(
   {
     firstName: {
@@ -15,7 +14,8 @@ const userSchema = new mongoose.Schema(
     },
     profilePhoto: {
       type: String,
-      default: "https://avatarfiles.alphacoders.com/146/thumb-1920-146420.jpg",
+      default:
+        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
     },
     email: {
       type: String,
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "Password is required"],
+      required: [true, "Hei buddy Password is required"],
     },
     postCount: {
       type: Number,
@@ -52,13 +52,11 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    isAccountVerified: {
-      type: Boolean,
-      default: false,
-    },
+    isAccountVerified: { type: Boolean, default: false },
     accountVerificationToken: String,
     accountVerificationTokenExpires: Date,
-    viewdBy: {
+
+    viewedBy: {
       type: [
         {
           type: mongoose.Schema.Types.ObjectId,
@@ -66,6 +64,7 @@ const userSchema = new mongoose.Schema(
         },
       ],
     },
+
     followers: {
       type: [
         {
@@ -83,8 +82,9 @@ const userSchema = new mongoose.Schema(
       ],
     },
     passwordChangeAt: Date,
-    passwordRessetToken: Date,
+    passwordRessetToken: String,
     passwordResetExpires: Date,
+
     active: {
       type: Boolean,
       default: false,
@@ -101,21 +101,20 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-//Hash password 
-
-userSchema.pre("save", async function(next){
-    //hash password 
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
+//Hash password
+userSchema.pre("save", async function (next) {
+  //hash password
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
 
-//Match password 
-userSchema.methods.isPasswordMatch = async function(enteredPassword){
+//match password
+userSchema.methods.isPasswordMatched = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
 //Compile schema into model
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;

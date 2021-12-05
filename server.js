@@ -6,21 +6,19 @@ const userRoutes = require("./route/users/usersRoute");
 const { errorHandler, notFound } = require("./middlewares/error/errorHandler");
 
 const app = express();
-//BD
+//DB
 dbConnect();
 
 //Middleware
 app.use(express.json());
 
 //Users route
-app.use('/api/users', userRoutes);
+app.use("/api/users", userRoutes);
 
-
-//Err handler
+//err handler
 app.use(notFound);
 app.use(errorHandler);
-//Server
+
+//server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, function () {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, console.log(`Server is running ${PORT}`));
