@@ -1,5 +1,6 @@
 const expressAsyncHandler = require("express-async-handler");
 const nodemailer = require("nodemailer");
+const crypto = require("crypto");
 const generateToken = require("../../config/token/generateToken");
 const User = require("../../model/user/User");
 const validateMongodbId = require("../../utils/validateMongodbID");
@@ -257,11 +258,21 @@ const unBlockUserCtrl = expressAsyncHandler(async (req, res) => {
 });
 
 //------------------------------
-//Account Verification - Send email
+// Generate email verification token
 //------------------------------
 
 const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
+  const loginUserId = req.user.id;
+
+  const user = await User.findById(loginUserId);
+  console.log(user);
   try {
+    //Generate token
+    const verificationToken = await user.createAccountVerificationToken();
+    //Save the user
+    await user.save();
+    console.log(verificationToken);
+
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -270,21 +281,46 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
       },
     });
 
+    //build your message
+    const resetURL = `If you were requested to verify your account, verify now within 10
+      minutes, otherwise ignore this message <a href="http://localhost:5000/verify-account/${verificationToken}">Click here to verify</a>`;
     let msg = {
       from: "User email", // Sender email
       to: "ryannguyen0303@gmail.com", // Receiver email
       subject: "Verification", // Title email
-      text: "This is a verification message", // Text in email
-      html: "<b>This is a verification message</b>", // Html in email
-    }
+      html: resetURL, // Html in email
+    };
 
     await transporter.sendMail(msg);
 
-    res.json("Email sent");
+    res.json(resetURL);
   } catch (error) {
     res.json(error);
   }
 });
+
+//------------------------------
+// Account verification
+//------------------------------
+
+const accountVerificationCtrl = expressAsyncHandler(async (req, res) => {
+  const { token } = req.body;
+  const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
+
+  //find this user by token
+  const userFound = await User.findOne({
+    accountVerificationToken: hashedToken,
+    accountVerificationTokenExpires: { $gt: new Date() },
+  });
+  if (!userFound) throw new Error("Token expired, try again later");
+  //update the property to true 
+  userFound.isAccountVerified = true;
+  userFound.accountVerificationToken = undefined;
+  userFound.accountVerificationTokenExpires = undefined;
+  await userFound.save();
+  res.json(userFound);
+});
+
 
 module.exports = {
   generateVerificationTokenCtrl,
@@ -300,4 +336,5 @@ module.exports = {
   unfollowUserCtrl,
   blockUserCtrl,
   unBlockUserCtrl,
+  accountVerificationCtrl,
 };
