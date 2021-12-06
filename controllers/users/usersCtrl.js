@@ -67,7 +67,6 @@ const fetchUsersCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 //Delete user
 //------------------------------
-
 const deleteUsersCtrl = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   //check if user id is valid
@@ -80,10 +79,9 @@ const deleteUsersCtrl = expressAsyncHandler(async (req, res) => {
   }
 });
 
-//------------------------------
-//User details
-//------------------------------
-
+//----------------
+//user details
+//----------------
 const fetchUserDetailsCtrl = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   //check if user id is valid
@@ -115,21 +113,44 @@ const userProfileCtrl = expressAsyncHandler(async (req, res) => {
 //Update profile
 //------------------------------
 const updateUserCtrl = expressAsyncHandler(async (req, res) => {
-  const {_id} = req?.user;
+  const { _id } = req?.user;
   validateMongodbId(_id);
-
-  const user = await User.findByIdAndUpdate(_id, {
-    firstName: req?.body?.firstName,
-    lastName: req?.body?.lastName,
-    email: req?.body?.email,
-    bio: req?.body?.bio
-  },{
-    new: true, 
-    runValidators: true
-  });
+  const user = await User.findByIdAndUpdate(
+    _id,
+    {
+      firstName: req?.body?.firstName,
+      lastName: req?.body?.lastName,
+      email: req?.body?.email,
+      bio: req?.body?.bio,
+    },
+    {
+      new: true,
+      runValidators: true,
+    }
+  );
   res.json(user);
 });
 
+//------------------------------
+//Update password
+//------------------------------
+
+const updateUserPasswordCtrl = expressAsyncHandler(async (req, res) => {
+  //destructure the login user
+  const { _id } = req.user;
+  const { password } = req.body;
+  validateMongodbId(_id);
+  //Find the user by _id
+  const user = await User.findById(_id);
+
+  if (password) {
+    user.password = password;
+    const updatedUser = await user.save();
+    res.json(updatedUser);
+  } else {
+    res.json(user);
+  }
+});
 
 module.exports = {
   userRegisterCtrl,
@@ -138,5 +159,6 @@ module.exports = {
   deleteUsersCtrl,
   fetchUserDetailsCtrl,
   userProfileCtrl,
-  updateUserCtrl
+  updateUserCtrl,
+  updateUserPasswordCtrl,
 };

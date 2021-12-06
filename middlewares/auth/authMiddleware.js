@@ -17,11 +17,13 @@ const authMiddleware = expressAsyncHandler(async (req, res, next) => {
         req.user = user;
         next();
       } else {
-        throw new "There is no token attach to the headers"();
+        throw new Error("There is no token attach to the headers");
       }
     } catch (error) {
       throw new Error("Not authorized token expired, login again");
     }
+  }else{
+    throw new Error("There is no token attach to the headers");
   }
 });
 
