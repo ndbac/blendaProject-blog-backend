@@ -23,7 +23,7 @@ userRoutes.post("/login", loginUserCtrl);
 userRoutes.get("/", authMiddleware, fetchUsersCtrl);
 userRoutes.put("/password", authMiddleware, updateUserPasswordCtrl);
 userRoutes.put("/follow", authMiddleware, followingUserCtrl);
-userRoutes.post("/send-mail", generateVerificationTokenCtrl);
+userRoutes.post("/generate-verify-email-token", generateVerificationTokenCtrl);
 userRoutes.put("/unfollow", authMiddleware, unfollowUserCtrl);
 userRoutes.put("/block-user/:id", authMiddleware, blockUserCtrl);
 userRoutes.put("/unblock-user/:id", authMiddleware, unBlockUserCtrl);

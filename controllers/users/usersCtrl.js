@@ -270,13 +270,15 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
       },
     });
 
-    let info = await transporter.sendMail({
+    let msg = {
       from: "User email", // Sender email
       to: "ryannguyen0303@gmail.com", // Receiver email
       subject: "Verification", // Title email
       text: "This is a verification message", // Text in email
-      html: "<b>Hello world?</b>", // Html in email
-    });
+      html: "<b>This is a verification message</b>", // Html in email
+    }
+
+    await transporter.sendMail(msg);
 
     res.json("Email sent");
   } catch (error) {
