@@ -16,13 +16,24 @@ const {
   accountVerificationCtrl,
   forgetPasswordToken,
   passwordResetCtrl,
+  profilePhotoUploadCtrl,
 } = require("../../controllers/users/usersCtrl");
 const authMiddleware = require("../../middlewares/auth/authMiddleware");
-
+const {
+  profilePhotoUpload,
+  profilePhotoResize,
+} = require("../../middlewares/upload/profilePhotoUpload");
 const userRoutes = express.Router();
 
 userRoutes.post("/register", userRegisterCtrl);
 userRoutes.post("/login", loginUserCtrl);
+userRoutes.put(
+  "/profilephoto-upload",
+  authMiddleware,
+  profilePhotoUpload.single("image"),
+  profilePhotoResize,
+  profilePhotoUploadCtrl
+);
 userRoutes.get("/", authMiddleware, fetchUsersCtrl);
 // password reset
 userRoutes.post("/forget-password-token", forgetPasswordToken);

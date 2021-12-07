@@ -4,6 +4,7 @@ const crypto = require("crypto");
 const generateToken = require("../../config/token/generateToken");
 const User = require("../../model/user/User");
 const validateMongodbId = require("../../utils/validateMongodbID");
+const cloudinaryUploadImg = require("../../utils/cloudinary");
 
 //-------------------------------------
 //Register
@@ -385,7 +386,31 @@ const passwordResetCtrl = expressAsyncHandler(async (req, res) => {
   res.json(user);
 });
 
+//------------------------------
+// Profile photo upload
+//------------------------------
+
+const profilePhotoUploadCtrl = expressAsyncHandler(async (req, res) => {
+  //Find the login user
+  const { _id } = req.user;
+
+  //1. Get the path to the image
+  const locallPath = `public/images/profile/${req.file.filename}`;
+  //2. Upload to cloudinary
+  const imgUploaded = await cloudinaryUploadImg(locallPath);
+
+  const fooundUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      profilePhoto: imgUploaded?.url,
+    },
+    { new: true }
+  );
+  res.json(fooundUser);
+});
+
 module.exports = {
+  profilePhotoUploadCtrl,
   forgetPasswordToken,
   generateVerificationTokenCtrl,
   userRegisterCtrl,
