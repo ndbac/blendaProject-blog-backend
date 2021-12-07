@@ -14,6 +14,8 @@ const {
   unBlockUserCtrl,
   generateVerificationTokenCtrl,
   accountVerificationCtrl,
+  forgetPasswordToken,
+  passwordResetCtrl,
 } = require("../../controllers/users/usersCtrl");
 const authMiddleware = require("../../middlewares/auth/authMiddleware");
 
@@ -22,6 +24,9 @@ const userRoutes = express.Router();
 userRoutes.post("/register", userRegisterCtrl);
 userRoutes.post("/login", loginUserCtrl);
 userRoutes.get("/", authMiddleware, fetchUsersCtrl);
+// password reset
+userRoutes.post("/forget-password-token", forgetPasswordToken);
+userRoutes.put("/reset-password", passwordResetCtrl);
 userRoutes.put("/password", authMiddleware, updateUserPasswordCtrl);
 userRoutes.put("/follow", authMiddleware, followingUserCtrl);
 userRoutes.post(

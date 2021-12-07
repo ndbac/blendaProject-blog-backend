@@ -83,7 +83,7 @@ const userSchema = new mongoose.Schema(
       ],
     },
     passwordChangeAt: Date,
-    passwordRessetToken: String,
+    passwordResetToken: String,
     passwordResetExpires: Date,
 
     active: {
@@ -129,6 +129,18 @@ userSchema.methods.createAccountVerificationToken = async function () {
 
   this.accountVerificationTokenExpires = Date.now() + 30 * 60 * 1000; //10 minutes
   return verificationToken;
+};
+
+//Password reset/forget
+
+userSchema.methods.createPasswordResetToken = async function () {
+  const resetToken = crypto.randomBytes(32).toString("hex");
+  this.passwordResetToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+  this.passwordResetExpires = Date.now() + 30 * 60 * 1000; //10 minutes
+  return resetToken;
 };
 
 //Compile schema into model
