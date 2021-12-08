@@ -69,10 +69,58 @@ const fetchPostCtrl = expressAsyncHandler(async (req, res) => {
   validateMongodbId(id);
   try {
     const post = await Post.findById(id).populate("user");
+    //update number of views
+    await Post.findByIdAndUpdate(id, { $inc: { numViews: 1 } }, { new: true });
     res.json(post);
   } catch (error) {
     res.json(error);
   }
 });
 
-module.exports = { createPostCtrl, fetchPostsCtrl, fetchPostCtrl };
+//------------------------------
+//Update posts
+//------------------------------
+
+const updatePostCtrl = expressAsyncHandler(async (req, res) => {
+  console.log(req.user);
+  const { id } = req.params;
+  validateMongodbId(id);
+
+  try {
+    const post = await Post.findByIdAndUpdate(
+      id,
+      {
+        ...req.body,
+        user: req.user?._id,
+      },
+      { new: true }
+    );
+    res.json(post);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+//------------------------------
+//Delete Post 
+//------------------------------
+
+const deletePostCtrl = expressAsyncHandler(async (req, res) => {
+  const {id} = req.params;
+  validateMongodbId(id);
+  try {
+    const post = await Post.findOneAndDelete(id);
+    res.json(post);
+  } catch (error) {
+    res.json(error);
+  }
+});
+
+
+module.exports = {
+  deletePostCtrl,
+  createPostCtrl,
+  fetchPostsCtrl,
+  fetchPostCtrl,
+  updatePostCtrl,
+};
