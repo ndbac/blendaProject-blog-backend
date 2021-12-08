@@ -13,11 +13,11 @@ const postSchema = new mongoose.Schema(
       required: [true, "Post category is required"],
       default: "All",
     },
-    isLike: {
+    isLiked: {
       type: Boolean,
       default: false,
     },
-    isDisLike: {
+    isDisLiked: {
       type: Boolean,
       default: false,
     },
@@ -49,7 +49,7 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        "https://cdn.pixabay.com/photo/2021/12/03/21/56/lamps-6843881_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2020/10/25/09/23/seagull-5683637_960_720.jpg",
     },
   },
   {
