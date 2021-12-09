@@ -30,20 +30,20 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
   }
 
   //1. Get the path to the image
-  const locallPath = `public/images/posts/${req.file.filename}`;
+//  const locallPath = `public/images/posts/${req.file.filename}`;
   //2. Upload to cloudinary
-  const imgUploaded = await cloudinaryUploadImg(locallPath);
+//  const imgUploaded = await cloudinaryUploadImg(locallPath);
 
   try {
-    // const post = await Post.create({
-    //   ...req.body,
-    //   image: imgUploaded?.url,
-    //   user: _id,
-    // });
-    res.json(imgUploaded);
+    const post = await Post.create({
+      ...req.body,
+//      image: imgUploaded?.url,
+      user: _id,
+    });
+    res.json(post);
 
     //Remove uploaded pictures
-    fs.unlinkSync(locallPath);
+//    fs.unlinkSync(locallPath);
   } catch (error) {
     res.json(error);
   }
