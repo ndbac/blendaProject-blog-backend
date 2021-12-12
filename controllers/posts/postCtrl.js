@@ -9,16 +9,13 @@ const cloudinaryUploadImg = require("../../utils/cloudinary");
 //------------------------------
 //CREATE POST
 //------------------------------
-
 const createPostCtrl = expressAsyncHandler(async (req, res) => {
-  console.log(req.file);
   const { _id } = req.user;
-  validateMongodbId(req.body.user);
+  // validateMongodbId(req.body.user);
 
   //Check for bad words
   const filter = new Filter();
   const isProfane = filter.isProfane(req.body.title, req.body.description);
-  console.log(isProfane);
   //Block user
   if (isProfane) {
     const user = await User.findByIdAndUpdate(_id, {
@@ -30,20 +27,19 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
   }
 
   //1. Get the path to the image
-//  const locallPath = `public/images/posts/${req.file.filename}`;
+  const localPath = `public/images/posts/${req.file.filename}`;
   //2. Upload to cloudinary
-//  const imgUploaded = await cloudinaryUploadImg(locallPath);
-
+  const imgUploaded = await cloudinaryUploadImg(localPath);
   try {
     const post = await Post.create({
       ...req.body,
-//      image: imgUploaded?.url,
       user: _id,
+      image: imgUploaded?.url,
     });
     res.json(post);
 
     //Remove uploaded pictures
-//    fs.unlinkSync(locallPath);
+    //    fs.unlinkSync(localPath);
   } catch (error) {
     res.json(error);
   }
@@ -54,12 +50,20 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 
 const fetchPostsCtrl = expressAsyncHandler(async (req, res) => {
+  const hasCategory = req.query.category;
   try {
-    const posts = await Post.find({}).populate("user");
-    res.json(posts);
-  } catch (error) {}
+    //Check if it has a category
+    if (hasCategory) {
+      const posts = await Post.find({ category: hasCategory }).populate("user");
+      res.json(posts);
+    } else {
+      const posts = await Post.find({}).populate("user");
+      res.json(posts);
+    }
+  } catch (error) {
+    res.json(error);
+  }
 });
-
 //------------------------------
 //Fetch a single psot
 //------------------------------
@@ -68,7 +72,10 @@ const fetchPostCtrl = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   validateMongodbId(id);
   try {
-    const post = await Post.findById(id).populate("user").populate("disLikes").populate("likes");
+    const post = await Post.findById(id)
+      .populate("user")
+      .populate("disLikes")
+      .populate("likes");
     //update number of views
     await Post.findByIdAndUpdate(id, { $inc: { numViews: 1 } }, { new: true });
     res.json(post);
@@ -184,7 +191,7 @@ const toggleAddDislikeToPostCtrl = expressAsyncHandler(async (req, res) => {
   const isDisLiked = post?.isDisLiked;
   //4. Check if already like this post
   const alreadyLiked = post?.likes?.find(
-    userId => userId.toString() === loginUserId?.toString()
+    (userId) => userId.toString() === loginUserId?.toString()
   );
   //Remove this user from likes array if it exists
   if (alreadyLiked) {

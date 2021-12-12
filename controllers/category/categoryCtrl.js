@@ -48,7 +48,10 @@ const updateCategoryCtrl = expressAsyncHandler(async (req, res) => {
       {
         title: req?.body?.title,
       },
-      { new: true, runValidators: true }
+      {
+        new: true,
+        runValidators: true,
+      }
     );
     res.json(category);
   } catch (error) {
@@ -61,6 +64,7 @@ const deleteCategory = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   try {
     const category = await Category.findByIdAndDelete(id);
+    
     res.json(category);
   } catch (error) {
     res.json(error);
