@@ -55,12 +55,9 @@ const fetchPostsCtrl = expressAsyncHandler(async (req, res) => {
     //Check if it has a category
     if (hasCategory !== "undefined") {
       const posts = await Post.find({ category: hasCategory }).populate("user");
-      console.log("AA");
-
       res.json(posts);
     } else {
       const posts = await Post.find({}).populate("user");
-      console.log("HMM");
       res.json(posts);
     }
   } catch (error) {
