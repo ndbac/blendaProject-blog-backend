@@ -51,6 +51,7 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
 
 const fetchPostsCtrl = expressAsyncHandler(async (req, res) => {
   const hasCategory = req.query.category;
+  console.log(req.query.category.value);
   try {
     //Check if it has a category
     if (hasCategory !== "undefined") {
