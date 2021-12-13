@@ -39,7 +39,7 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
     res.json(post);
 
     //Remove uploaded pictures
-    //    fs.unlinkSync(localPath);
+    fs.unlinkSync(localPath);
   } catch (error) {
     res.json(error);
   }
@@ -53,11 +53,14 @@ const fetchPostsCtrl = expressAsyncHandler(async (req, res) => {
   const hasCategory = req.query.category;
   try {
     //Check if it has a category
-    if (hasCategory) {
+    if (hasCategory !== "undefined") {
       const posts = await Post.find({ category: hasCategory }).populate("user");
+      console.log("AA");
+
       res.json(posts);
     } else {
       const posts = await Post.find({}).populate("user");
+      console.log("HMM");
       res.json(posts);
     }
   } catch (error) {
