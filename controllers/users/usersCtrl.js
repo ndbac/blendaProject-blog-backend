@@ -48,6 +48,7 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
       profilePhoto: userFound?.profilePhoto,
       isAdmin: userFound?.isAdmin,
       token: generateToken(userFound?._id),
+      isVerified: userFound?.isAccountVerified,
     });
   } else {
     res.status(401);
@@ -265,12 +266,11 @@ const unBlockUserCtrl = expressAsyncHandler(async (req, res) => {
 
 const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
   const loginUserId = req.user.id;
-
   const user = await User.findById(loginUserId);
   console.log(user);
   try {
     //Generate token
-    const verificationToken = await user.createAccountVerificationToken();
+    const verificationToken = await user?.createAccountVerificationToken();
     //Save the user
     await user.save();
     console.log(verificationToken);
@@ -284,12 +284,12 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     });
 
     //build your message
-    const resetURL = `If you were requested to verify your account, verify now within 10
-      minutes, otherwise ignore this message <a href="http://localhost:5000/verify-account/${verificationToken}">Click here to verify</a>`;
+    const resetURL = `If you were requested to verify your account, verify now within 10 minutes, otherwise ignore this message <a href="http://localhost:3000/verify-account/${verificationToken}">Click to verify your account</a>`;
+
     let msg = {
-      from: "User email", // Sender email
-      to: "ryannguyen0303@gmail.com", // Receiver email
-      subject: "Verification", // Title email
+      from: "ryannguyen0303@gmail.com", // Sender email
+      to: user?.email, // Receiver email
+      subject: "Verification your account", // Title email
       html: resetURL, // Html in email
     };
 
