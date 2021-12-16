@@ -373,7 +373,7 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
 
     //build your message
     const resetURL = `If you were requested to reset your password, reset now within 10
-      minutes, otherwise ignore this message <a href="http://localhost:5000/reset-password/${token}">Click here to verify</a>`;
+      minutes, otherwise ignore this message <a href="http://localhost:3000/reset-password/${token}">Click here to verify</a>`;
     let msg = {
       from: "ryannguyen0303@gmail.com", // Sender email
       to: email, // Receiver email
