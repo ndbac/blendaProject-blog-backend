@@ -1,5 +1,6 @@
 const expressAsyncHandler = require("express-async-handler");
 const Comment = require("../../model/comment/Comment");
+const blockUser = require("../../utils/blockUser");
 const validateMongodbId = require("../../utils/validateMongodbID");
 
 //------------------------------
@@ -9,6 +10,8 @@ const validateMongodbId = require("../../utils/validateMongodbID");
 const createCommentCtrl = expressAsyncHandler(async (req, res) => {
   //1. Get the user
   const user = req.user;
+  //check if user is block
+  blockUser(user);
   //2. Get the post id
   const { postId, description } = req.body;
   try {

@@ -5,14 +5,16 @@ const Post = require("../../model/post/Post");
 const validateMongodbId = require("../../utils/validateMongodbID");
 const User = require("../../model/user/User");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
+const blockUser = require("../../utils/blockUser");
 
 //------------------------------
 //CREATE POST
 //------------------------------
 const createPostCtrl = expressAsyncHandler(async (req, res) => {
   const { _id } = req.user;
+  //block user
+  blockUser(req.user);
   // validateMongodbId(req.body.user);
-
   //Check for bad words
   const filter = new Filter();
   const isProfane = filter.isProfane(req.body.title, req.body.description);
@@ -26,6 +28,10 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
     );
   }
 
+  //prevent user if his account is a starter account
+  if (req?.user?.accountType === "Starter Account" && req?.user?.postCount >= 2)
+    throw new Error("Starter account only have the right to create 2 posts");
+
   //1. Get the path to the image
   const localPath = `public/images/posts/${req.file.filename}`;
   //2. Upload to cloudinary
@@ -36,10 +42,17 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
       user: _id,
       image: imgUploaded?.url,
     });
-    res.json(post);
-
+    //update the user post count
+    await User.findByIdAndUpdate(
+      _id,
+      {
+        $inc: { postCount: 1 },
+      },
+      { new: true }
+    );
     //Remove uploaded pictures
     fs.unlinkSync(localPath);
+    res.json(post);
   } catch (error) {
     res.json(error);
   }
@@ -56,10 +69,14 @@ const fetchPostsCtrl = expressAsyncHandler(async (req, res) => {
     if (hasCategory !== "undefined" && hasCategory) {
       const posts = await Post.find({ category: hasCategory })
         .populate("user")
-        .populate("comments");
+        .populate("comments")
+        .sort("-createdAt");
       res.json(posts);
     } else {
-      const posts = await Post.find({}).populate("user").populate("comments");
+      const posts = await Post.find({})
+        .populate("user")
+        .populate("comments")
+        .sort("-createdAt");
       res.json(posts);
     }
   } catch (error) {

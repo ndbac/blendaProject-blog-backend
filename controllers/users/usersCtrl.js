@@ -6,6 +6,7 @@ const generateToken = require("../../config/token/generateToken");
 const User = require("../../model/user/User");
 const validateMongodbId = require("../../utils/validateMongodbID");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
+const blockUser = require("../../utils/blockUser");
 
 //-------------------------------------
 //Register
@@ -38,6 +39,9 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
   const { email, password } = req.body;
   //check if user exists
   const userFound = await User.findOne({ email });
+  //check if blocked
+  if (userFound?.isBlocked && !userFound.isAdmin)
+    throw new Error("Access Denied, You have been blocked");
   //Check if password is match
   if (userFound && (await userFound.isPasswordMatched(password))) {
     res.json({
@@ -62,7 +66,7 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
 const fetchUsersCtrl = expressAsyncHandler(async (req, res) => {
   console.log(req.headers);
   try {
-    const users = await User.find({});
+    const users = await User.find({}).populate("posts");
     res.json(users);
   } catch (error) {
     res.json(error);
@@ -102,13 +106,31 @@ const fetchUserDetailsCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 //User profile
 //------------------------------
-
 const userProfileCtrl = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
   validateMongodbId(id);
+  //1.Find the login user
+  //2. Check this particular if the login user exists in the array of viewedBy
+
+  //Get the login user
+  const loginUserId = req?.user?._id?.toString();
+  console.log(typeof loginUserId);
   try {
-    const myProfile = await User.findById(id).populate("posts");
-    res.json(myProfile);
+    const myProfile = await User.findById(id)
+      .populate("posts")
+      .populate("viewedBy");
+    const alreadyViewed = myProfile?.viewedBy?.find((user) => {
+      console.log(user);
+      return user?._id?.toString() === loginUserId;
+    });
+    if (alreadyViewed) {
+      res.json(myProfile);
+    } else {
+      const profile = await User.findByIdAndUpdate(myProfile?._id, {
+        $push: { viewedBy: loginUserId },
+      });
+      res.json(profile);
+    }
   } catch (error) {
     res.json(error);
   }
@@ -119,6 +141,8 @@ const userProfileCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 const updateUserCtrl = expressAsyncHandler(async (req, res) => {
   const { _id } = req?.user;
+  //block user
+  blockUser(req?.user);
   validateMongodbId(_id);
   const user = await User.findByIdAndUpdate(
     _id,
@@ -394,7 +418,8 @@ const passwordResetCtrl = expressAsyncHandler(async (req, res) => {
 const profilePhotoUploadCtrl = expressAsyncHandler(async (req, res) => {
   //Find the login user
   const { _id } = req.user;
-
+  //block user
+  blockUser(req?.user);
   //1. Get the path to the image
   const locallPath = `public/images/profile/${req.file.filename}`;
   //2. Upload to cloudinary
