@@ -13,6 +13,9 @@ const categoryRoute = require("./route/category/categoryRoute");
 const app = express();
 //DB
 dbConnect();
+app.get("/", (req, res)=>{
+    res.json({msg: "API for blog app"});
+});
 
 //Middleware
 app.use(express.json());
