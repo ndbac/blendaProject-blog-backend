@@ -115,6 +115,7 @@ userSchema.virtual("accountType").get(function () {
   return totalFollowers >= 1 ? "Pro Account" : "Starter Account";
 });
 
+
 //Hash password
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {

@@ -8,6 +8,7 @@ const { errorHandler, notFound } = require("./middlewares/error/errorHandler");
 const postRoute = require("./route/posts/postRoute");
 const commentRoutes = require("./route/comments/commentRoute");
 const emailMsgRoute = require("./route/emailMsg/emailMsgRoute");
+const emailContactRoute = require("./route/emailMsg/emailContactRoute");
 const categoryRoute = require("./route/category/categoryRoute");
 
 const app = express();
@@ -29,6 +30,8 @@ app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoutes);
 //email msg
 app.use("/api/email", emailMsgRoute);
+//email contact
+app.use("/api/contact", emailContactRoute);
 //category
 app.use("/api/category", categoryRoute);
 
