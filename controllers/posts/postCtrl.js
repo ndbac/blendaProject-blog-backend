@@ -31,6 +31,8 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
   //prevent user if his account is a starter account
   if (req?.user?.accountType === "Starter Account" && req?.user?.postCount >= 2)
     throw new Error("Starter account only have the right to create 2 posts");
+  if(req?.user?.isAccountVerified === "false")
+    throw new Error("You have to verify your account before creating a new post");
 
   //1. Get the path to the image
   const localPath = `public/images/posts/${req.file.filename}`;
