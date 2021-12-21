@@ -136,9 +136,11 @@ const updatePostCtrl = expressAsyncHandler(async (req, res) => {
 
 const deletePostCtrl = expressAsyncHandler(async (req, res) => {
   const { id } = req.params;
+  console.log(id);
   validateMongodbId(id);
   try {
-    const post = await Post.findOneAndDelete(id);
+    const post = await Post.findByIdAndDelete(id);
+    console.log(post);
     res.json(post);
   } catch (error) {
     res.json(error);
@@ -217,7 +219,7 @@ const toggleAddDislikeToPostCtrl = expressAsyncHandler(async (req, res) => {
   );
   //Remove this user from likes array if it exists
   if (alreadyLiked) {
-    const post = await Post.findOneAndUpdate(
+    const post = await Post.findByIdAndUpdate(
       postId,
       {
         $pull: { likes: loginUserId },
