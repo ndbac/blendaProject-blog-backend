@@ -43,7 +43,7 @@ const postSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: [true, "Post description is required"],
+      // required: [true, "Post description is required"],
     },
     image: {
       type: String,
