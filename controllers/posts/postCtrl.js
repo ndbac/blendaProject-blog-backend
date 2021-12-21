@@ -6,6 +6,7 @@ const validateMongodbId = require("../../utils/validateMongodbID");
 const User = require("../../model/user/User");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
 const blockUser = require("../../utils/blockUser");
+const unverifiedUser = require("../../utils/unverifiedUser");
 
 //------------------------------
 //CREATE POST
@@ -14,6 +15,7 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
   const { _id } = req.user;
   //block user
   blockUser(req.user);
+  unverifiedUser(req.user);
   // validateMongodbId(req.body.user);
   //Check for bad words
   const filter = new Filter();
@@ -31,8 +33,6 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
   //prevent user if his account is a starter account
   if (req?.user?.accountType === "Starter Account" && req?.user?.postCount >= 2)
     throw new Error("Starter account only have the right to create 2 posts");
-  if(req?.user?.isAccountVerified === "false")
-    throw new Error("You have to verify your account before creating a new post");
 
   //1. Get the path to the image
   const localPath = `public/images/posts/${req.file.filename}`;
