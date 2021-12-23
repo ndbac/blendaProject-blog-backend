@@ -112,7 +112,9 @@ userSchema.virtual("posts", {
 //Account type
 userSchema.virtual("accountType").get(function () {
   const totalFollowers = this.followers?.length;
-  return totalFollowers >= 1 ? "Pro Account" : "Starter Account";
+  const admin = this.isAdmin;
+  if(admin) return "Admin";
+  return totalFollowers >= 100 ? "Pro Account" : totalFollowers >= 10 ? "Auth Account" : totalFollowers >= 1 ? "Accepted Account" : "Starter Account";
 });
 
 
