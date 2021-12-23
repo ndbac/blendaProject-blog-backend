@@ -308,7 +308,855 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     });
 
     //build your message
-    const resetURL = `If you were requested to verify your account, verify now within 10 minutes, otherwise ignore this message <a href="https://blendaproject.netlify.app/verify-account/${verificationToken}">Click to verify your account</a>`;
+    // const resetURL = `If you were requested to verify your account, verify now within 10 minutes, otherwise ignore this message <a href="https://blendaproject.netlify.app/verify-account/${verificationToken}">Click to verify your account</a>`;
+    const resetURL = `
+    <div id=":1aw" class="a3s aiL msg4488850096719810666 adM">
+    <div class="HOEnZb">
+      <div class="adm">
+        <div
+          id="q_9"
+          class="ajR h4"
+          data-tooltip="Ẩn nội dung được mở rộng"
+          aria-label="Ẩn nội dung được mở rộng"
+          aria-expanded="true"
+        >
+          <div class="ajT"></div>
+        </div>
+      </div>
+      <div class="im">
+        <u></u>
+  
+        <div style="margin: 0; padding: 0; background-color: #ffffff">
+          <table
+            bgcolor="#FFFFFF"
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            style="
+              table-layout: fixed;
+              vertical-align: top;
+              min-width: 320px;
+              border-spacing: 0;
+              border-collapse: collapse;
+              background-color: #ffffff;
+              width: 100%;
+            "
+            valign="top"
+            width="100%"
+          >
+            <tbody>
+              <tr style="vertical-align: top" valign="top">
+                <td
+                  style="word-break: break-word; vertical-align: top"
+                  valign="top"
+                >
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num4
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 164px;
+                            width: 166px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                align="center"
+                                style="padding-right: 0px; padding-left: 0px"
+                              >
+                                <img
+                                  src="https://i.imgur.com/cuTEYs9.png"
+                                  style="
+                                    text-decoration: none;
+                                    height: auto;
+                                    border: 0;
+                                    width: 100%;
+                                    max-width: 167px;
+                                    display: block;
+                                  "
+                                  width="167"
+                                  data-image-whitelisted=""
+                                  class="CToWUd"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num8
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 328px;
+                            width: 333px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: Arial, Helvetica Neue, Helvetica,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 12px;
+                                    line-height: 1.2;
+                                    color: #555555;
+                                    font-family: Arial, Helvetica Neue, Helvetica,
+                                      sans-serif;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 12px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    &nbsp;
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <table
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                role="presentation"
+                                style="
+                                  table-layout: fixed;
+                                  vertical-align: top;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                  min-width: 100%;
+                                "
+                                valign="top"
+                                width="100%"
+                              >
+                                <tbody>
+                                  <tr style="vertical-align: top" valign="top">
+                                    <td
+                                      style="
+                                        word-break: break-word;
+                                        vertical-align: top;
+                                        min-width: 100%;
+                                        padding-top: 10px;
+                                        padding-right: 10px;
+                                        padding-bottom: 10px;
+                                        padding-left: 10px;
+                                      "
+                                      valign="top"
+                                    >
+                                      <table
+                                        align="center"
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        style="
+                                          table-layout: fixed;
+                                          vertical-align: top;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          border-top: 1px solid #dee4ed;
+                                          width: 100%;
+                                        "
+                                        valign="top"
+                                        width="100%"
+                                      >
+                                        <tbody>
+                                          <tr
+                                            style="vertical-align: top"
+                                            valign="top"
+                                          >
+                                            <td
+                                              style="
+                                                word-break: break-word;
+                                                vertical-align: top;
+                                              "
+                                              valign="top"
+                                            >
+                                              <span></span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+  
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    Xin chào Blenda-er!
+                                  </p>
+                                </div>
+                              </div>
+  
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 16px"
+                                      >Nếu bạn không yêu cầu xác minh mật khẩu tại Blenda,
+                                      vui lòng bỏ qua email này!</span
+                                    >
+                                  </p>
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    &nbsp;
+                                  </p>
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 16px"
+                                      >Để xác minh tài khoản Blenda, vui lòng click vào nút
+                                      xác minh dưới đây. Blenda chúc bạn một ngày vui vẻ.</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+  
+                              <a
+                                align="center"
+                                style="
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 0px;
+                                  padding-left: 10px;
+                                "
+                              >
+                              </a
+                              ><a
+                                href="https://blendaproject.netlify.app/verify-account/${verificationToken}"
+                                style="
+                                  text-decoration: none;
+                                  display: block;
+                                  color: #ffffff;
+                                  background-color: #532bdc;
+                                  border-radius: 6px;
+                                  width: 100%;
+                                  width: calc(100% - 2px);
+                                  border-top: 1px solid #532bdc;
+                                  border-right: 1px solid #532bdc;
+                                  border-bottom: 1px solid #532bdc;
+                                  border-left: 1px solid #532bdc;
+                                  padding-top: 5px;
+                                  padding-bottom: 5px;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  text-align: center;
+                                  word-break: keep-all;
+                                "
+                                target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://blendaproject.netlify.app/verify-account/${verificationToken}&amp;source=gmail&amp;ust=1640332839663000&amp;usg=AOvVaw2unvPduBcrwkM0M5d5iBnd"
+                              >
+                                <span
+                                  style="
+                                    padding-left: 60px;
+                                    padding-right: 60px;
+                                    font-size: 16px;
+                                    display: inline-block;
+                                    letter-spacing: undefined;
+                                  "
+                                  ><span
+                                    style="
+                                      font-size: 16px;
+                                      line-height: 1.5;
+                                      word-break: break-word;
+                                    "
+                                    ><div
+                                      href="https://blendaproject.netlify.app/verify-account/${verificationToken}"
+                                      style="
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        color: white;
+                                        text-decoration: none;
+                                      "
+                                    >
+                                      Xác minh tài khoản
+                                    </div></span
+                                  ></span
+                                >
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #8d9198;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 0px;
+                                  padding-right: 0px;
+                                  padding-bottom: 0px;
+                                  padding-left: 0px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #8d9198;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 12px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      text-align: center;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 12px"
+                                      >Vì bất cứ lí do nào mà nút xác nhận bên
+                                      trên không hoạt động,
+                                      <a
+                                        href="https://blendaproject.netlify.app/verify-account/${verificationToken}"
+                                      >
+                                        vui lòng click vào đây để xác minh tài khoản!</a
+                                      >
+                                    </span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="
+                        m_4488850096719810666block-grid
+                        m_4488850096719810666two-up
+                      "
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                        padding-top: 95px;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num8
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 246px;
+                            width: 250px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 14px;
+                                      line-height: 1.2;
+                                      text-align: left;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <strong
+                                      ><span style="font-size: 12px"
+                                        >© 2021 Blenda. All rights reserved.</span
+                                      ></strong
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num4
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 246px;
+                            width: 250px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #8d9198;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #8d9198;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 14px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      text-align: right;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <a
+                                      href="https://blendaproject.netlify.app"
+                                      rel="noopener"
+                                      style="
+                                        text-decoration: none;
+                                        color: #8d9198;
+                                      "
+                                      target="_blank"
+                                      data-saferedirecturl="https://www.google.com/url?q=https://blendaproject.netlify.app&amp;source=gmail&amp;ust=1640332839663000&amp;usg=AOvVaw3zE4tSktkGvYuajC94JQAF"
+                                      ><span style="font-size: 12px"
+                                        >Về chúng tôi</span
+                                      ></a
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                role="presentation"
+                                style="
+                                  table-layout: fixed;
+                                  vertical-align: top;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                "
+                                valign="top"
+                                width="100%"
+                              >
+                                <tbody>
+                                  <tr style="vertical-align: top" valign="top">
+                                    <td
+                                      align="center"
+                                      style="
+                                        word-break: break-word;
+                                        vertical-align: top;
+                                        padding-top: 5px;
+                                        padding-right: 0px;
+                                        padding-bottom: 5px;
+                                        padding-left: 0px;
+                                        text-align: center;
+                                      "
+                                      valign="top"
+                                    >
+                                      <table
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        class="m_4488850096719810666icons-inner"
+                                        role="presentation"
+                                        style="
+                                          table-layout: fixed;
+                                          vertical-align: top;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          display: inline-block;
+                                          padding-left: 0px;
+                                          padding-right: 0px;
+                                        "
+                                        valign="top"
+                                      ></table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    `;
 
     let msg = {
       from: "ryannguyen0303@gmail.com", // Sender email
@@ -372,8 +1220,855 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     });
 
     //build your message
-    const resetURL = `If you were requested to reset your password, reset now within 10
-      minutes, otherwise ignore this message <a href="https://blendaproject.netlify.app/reset-password/${token}">Click here to verify</a>`;
+    // const resetURL = `If you were requested to reset your password, reset now within 10
+    //   minutes, otherwise ignore this message <a href="https://blendaproject.netlify.app/reset-password/${token}">Click here to verify</a>`;
+
+    const resetURL = `
+    <div id=":1aw" class="a3s aiL msg4488850096719810666 adM">
+    <div class="HOEnZb">
+      <div class="adm">
+        <div
+          id="q_9"
+          class="ajR h4"
+          data-tooltip="Ẩn nội dung được mở rộng"
+          aria-label="Ẩn nội dung được mở rộng"
+          aria-expanded="true"
+        >
+          <div class="ajT"></div>
+        </div>
+      </div>
+      <div class="im">
+        <u></u>
+  
+        <div style="margin: 0; padding: 0; background-color: #ffffff">
+          <table
+            bgcolor="#FFFFFF"
+            cellpadding="0"
+            cellspacing="0"
+            role="presentation"
+            style="
+              table-layout: fixed;
+              vertical-align: top;
+              min-width: 320px;
+              border-spacing: 0;
+              border-collapse: collapse;
+              background-color: #ffffff;
+              width: 100%;
+            "
+            valign="top"
+            width="100%"
+          >
+            <tbody>
+              <tr style="vertical-align: top" valign="top">
+                <td
+                  style="word-break: break-word; vertical-align: top"
+                  valign="top"
+                >
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num4
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 164px;
+                            width: 166px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                align="center"
+                                style="padding-right: 0px; padding-left: 0px"
+                              >
+                                <img
+                                  src="https://i.imgur.com/cuTEYs9.png"
+                                  style="
+                                    text-decoration: none;
+                                    height: auto;
+                                    border: 0;
+                                    width: 100%;
+                                    max-width: 167px;
+                                    display: block;
+                                  "
+                                  width="167"
+                                  data-image-whitelisted=""
+                                  class="CToWUd"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num8
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 328px;
+                            width: 333px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: Arial, Helvetica Neue, Helvetica,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 12px;
+                                    line-height: 1.2;
+                                    color: #555555;
+                                    font-family: Arial, Helvetica Neue, Helvetica,
+                                      sans-serif;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 12px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    &nbsp;
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <table
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                role="presentation"
+                                style="
+                                  table-layout: fixed;
+                                  vertical-align: top;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                  min-width: 100%;
+                                "
+                                valign="top"
+                                width="100%"
+                              >
+                                <tbody>
+                                  <tr style="vertical-align: top" valign="top">
+                                    <td
+                                      style="
+                                        word-break: break-word;
+                                        vertical-align: top;
+                                        min-width: 100%;
+                                        padding-top: 10px;
+                                        padding-right: 10px;
+                                        padding-bottom: 10px;
+                                        padding-left: 10px;
+                                      "
+                                      valign="top"
+                                    >
+                                      <table
+                                        align="center"
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        role="presentation"
+                                        style="
+                                          table-layout: fixed;
+                                          vertical-align: top;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          border-top: 1px solid #dee4ed;
+                                          width: 100%;
+                                        "
+                                        valign="top"
+                                        width="100%"
+                                      >
+                                        <tbody>
+                                          <tr
+                                            style="vertical-align: top"
+                                            valign="top"
+                                          >
+                                            <td
+                                              style="
+                                                word-break: break-word;
+                                                vertical-align: top;
+                                              "
+                                              valign="top"
+                                            >
+                                              <span></span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+  
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    Xin chào Blenda-er!
+                                  </p>
+                                </div>
+                              </div>
+  
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 16px"
+                                      >Nếu bạn không yêu cầu khôi phục mật khẩu, vui lòng bỏ qua email này!</span
+                                    >
+                                  </p>
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    &nbsp;
+                                  </p>
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 16px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 16px"
+                                      >Để khôi phục mật khẩu, bạn hãy ấn vào
+                                      nút bên dưới. Blenda chúc bạn một ngày
+                                      vui vẻ.</span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+  
+                              <a
+                                align="center"
+                                style="
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 0px;
+                                  padding-left: 10px;
+                                "
+                              >
+                              </a
+                              ><a
+                                href="https://blendaproject.netlify.app/reset-password/${token}"
+                                style="
+                                  text-decoration: none;
+                                  display: block;
+                                  color: #ffffff;
+                                  background-color: #532bdc;
+                                  border-radius: 6px;
+                                  width: 100%;
+                                  width: calc(100% - 2px);
+                                  border-top: 1px solid #532bdc;
+                                  border-right: 1px solid #532bdc;
+                                  border-bottom: 1px solid #532bdc;
+                                  border-left: 1px solid #532bdc;
+                                  padding-top: 5px;
+                                  padding-bottom: 5px;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  text-align: center;
+                                  word-break: keep-all;
+                                "
+                                target="_blank"
+                                data-saferedirecturl="https://www.google.com/url?q=https://blendaproject.netlify.app/reset-password/${token}&amp;source=gmail&amp;ust=1640332839663000&amp;usg=AOvVaw2unvPduBcrwkM0M5d5iBnd"
+                              >
+                                <span
+                                  style="
+                                    padding-left: 60px;
+                                    padding-right: 60px;
+                                    font-size: 16px;
+                                    display: inline-block;
+                                    letter-spacing: undefined;
+                                  "
+                                  ><span
+                                    style="
+                                      font-size: 16px;
+                                      line-height: 1.5;
+                                      word-break: break-word;
+                                    "
+                                    ><div
+                                      href="https://blendaproject.netlify.app/reset-password/${token}"
+                                      style="
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        color: white;
+                                        text-decoration: none;
+                                      "
+                                    >
+                                      Khôi phục mật khẩu
+                                    </div></span
+                                  ></span
+                                >
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #8d9198;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 0px;
+                                  padding-right: 0px;
+                                  padding-bottom: 0px;
+                                  padding-left: 0px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 16px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #8d9198;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 12px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      text-align: center;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <span style="font-size: 12px"
+                                      >Vì bất cứ lí do nào mà nút xác nhận bên trên không hoạt động,
+                                      <a href="https://blendaproject.netlify.app/reset-password/${token}"> vui lòng click vào đây để khôi phục mật khẩu!</a>
+                                      </span
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="
+                        m_4488850096719810666block-grid
+                        m_4488850096719810666two-up
+                      "
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                        padding-top: 95px;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num8
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 246px;
+                            width: 250px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #555555;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #555555;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 14px;
+                                      line-height: 1.2;
+                                      text-align: left;
+                                      word-break: break-word;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <strong
+                                      ><span style="font-size: 12px"
+                                        >© 2021 Blenda. All rights
+                                        reserved.</span
+                                      ></strong
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div
+                          class="
+                            m_4488850096719810666col m_4488850096719810666num4
+                          "
+                          style="
+                            display: table-cell;
+                            vertical-align: top;
+                            max-width: 320px;
+                            min-width: 246px;
+                            width: 250px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <div
+                                style="
+                                  color: #8d9198;
+                                  font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                    sans-serif;
+                                  line-height: 1.2;
+                                  padding-top: 10px;
+                                  padding-right: 10px;
+                                  padding-bottom: 10px;
+                                  padding-left: 10px;
+                                "
+                              >
+                                <div
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 1.2;
+                                    font-family: 'Ubuntu', Tahoma, Verdana, Segoe,
+                                      sans-serif;
+                                    color: #8d9198;
+                                  "
+                                >
+                                  <p
+                                    style="
+                                      margin: 0;
+                                      font-size: 14px;
+                                      line-height: 1.2;
+                                      word-break: break-word;
+                                      text-align: right;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    <a
+                                      href="https://blendaproject.netlify.app"
+                                      rel="noopener"
+                                      style="
+                                        text-decoration: none;
+                                        color: #8d9198;
+                                      "
+                                      target="_blank"
+                                      data-saferedirecturl="https://www.google.com/url?q=https://blendaproject.netlify.app&amp;source=gmail&amp;ust=1640332839663000&amp;usg=AOvVaw3zE4tSktkGvYuajC94JQAF"
+                                      ><span style="font-size: 12px"
+                                        >Về chúng tôi</span
+                                      ></a
+                                    >
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="background-color: transparent">
+                    <div
+                      class="m_4488850096719810666block-grid"
+                      style="
+                        min-width: 320px;
+                        max-width: 500px;
+                        word-wrap: break-word;
+                        word-break: break-word;
+                        margin: 0 auto;
+                        background-color: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          border-collapse: collapse;
+                          display: table;
+                          width: 100%;
+                          background-color: transparent;
+                        "
+                      >
+                        <div
+                          class="m_4488850096719810666col"
+                          style="
+                            min-width: 320px;
+                            max-width: 500px;
+                            display: table-cell;
+                            vertical-align: top;
+                            width: 500px;
+                          "
+                        >
+                          <div
+                            class="m_4488850096719810666col_cont"
+                            style="width: 100% !important"
+                          >
+                            <div
+                              style="
+                                border-top: 0px solid transparent;
+                                border-left: 0px solid transparent;
+                                border-bottom: 0px solid transparent;
+                                border-right: 0px solid transparent;
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                                padding-right: 0px;
+                                padding-left: 0px;
+                              "
+                            >
+                              <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                role="presentation"
+                                style="
+                                  table-layout: fixed;
+                                  vertical-align: top;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                "
+                                valign="top"
+                                width="100%"
+                              >
+                                <tbody>
+                                  <tr style="vertical-align: top" valign="top">
+                                    <td
+                                      align="center"
+                                      style="
+                                        word-break: break-word;
+                                        vertical-align: top;
+                                        padding-top: 5px;
+                                        padding-right: 0px;
+                                        padding-bottom: 5px;
+                                        padding-left: 0px;
+                                        text-align: center;
+                                      "
+                                      valign="top"
+                                    >
+                                      <table
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                        class="m_4488850096719810666icons-inner"
+                                        role="presentation"
+                                        style="
+                                          table-layout: fixed;
+                                          vertical-align: top;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          display: inline-block;
+                                          padding-left: 0px;
+                                          padding-right: 0px;
+                                        "
+                                        valign="top"
+                                      ></table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    `;
+
     let msg = {
       from: "ryannguyen0303@gmail.com", // Sender email
       to: email, // Receiver email
