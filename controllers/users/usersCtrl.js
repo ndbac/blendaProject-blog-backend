@@ -523,7 +523,7 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     `;
 
     let msg = {
-      from: process.env.EMAIL, // Sender email
+      from: process.env.EMAIL_2, // Sender email
       to: user?.email, // Receiver email
       subject: "Verification your account", // Title email
       html: ResetURL, // Html in email
@@ -801,7 +801,7 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     `;
 
     let msg = {
-      from: process.env.EMAIL, // Sender email
+      from: process.env.EMAIL_2, // Sender email
       to: email, // Receiver email
       subject: "Reset Password", // Title email
       html: ResetURL, // Html in email
