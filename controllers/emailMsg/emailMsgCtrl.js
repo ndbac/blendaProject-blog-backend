@@ -15,16 +15,36 @@ const sendEmailMsgCtrl = expressAsyncHandler(async (req, res) => {
     throw new Error(`Email sent failed, because it contains profanity words`);
 
   try {
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
+    // let transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: process.env.EMAIL,
+    //     pass: process.env.PASS,
+    //   },
+    // });
+
+    // let smtp = nodemailer.createTransport({
+    //   host: "mail.privateemail.com",
+    //   port: 465,
+    //   auth: {
+    //     user: process.env.EMAIL,
+    //     pass: process.env.PASS,
+    //   },
+    // });
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL,
-        pass: process.env.PASS,
-      },
+        pass: process.env.PASS
+      }
     });
+
     //build up message
     const msg = {
-      from: "ndinhbac.0@gmail.com", // Sender email
+      from: process.env.EMAIL, // Sender email
       to: to, // Receiver email
       subject: subject, // Title email
       text: message, // Html in email
