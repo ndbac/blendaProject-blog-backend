@@ -18,14 +18,14 @@ const sendEmailMsgCtrl = expressAsyncHandler(async (req, res) => {
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_2,
-        pass: process.env.PASS_2,
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
       },
     });
 
     //build up message
     const msg = {
-      from: process.env.EMAIL_2, // Sender email
+      from: process.env.EMAIL, // Sender email
       to: to, // Receiver email
       subject: subject, // Title email
       text: message, // Html in email
