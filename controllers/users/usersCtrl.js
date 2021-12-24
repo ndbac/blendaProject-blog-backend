@@ -7,6 +7,11 @@ const User = require("../../model/user/User");
 const validateMongodbId = require("../../utils/validateMongodbID");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
 const blockUser = require("../../utils/blockUser");
+const { google } = require("googleapis");
+const config = require("../../config.js");
+const OAuth2 = google.auth.OAuth2;
+const OAuth2_client = new OAuth2(config.clientId, config.clientSecret);
+OAuth2_client.setCredentials({ refresh_token: config.refreshToken });
 
 //-------------------------------------
 //Register
@@ -299,13 +304,24 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     await user.save();
     console.log(verificationToken);
 
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_2,
-        pass: process.env.PASS_2,
-      },
-    });
+    //   let transporter = nodemailer.createTransport({
+    //     host: 'smtp.gmail.com',
+    //     port: 587,
+    //     secure: false,
+    //     requireTLS: true,
+    //     auth: {
+    //         user: process.env.EMAIL_2,
+    //         pass: process.env.PASS_2
+    //     }
+    // });
+
+    // let transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: process.env.EMAIL_2,
+    //     pass: process.env.PASS_2,
+    //   },
+    // });
 
     // const transporter = nodemailer.createTransport({
     //   host: 'mail.privateemail.com',
@@ -316,6 +332,20 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     //     pass: process.env.PASS
     //   }
     // });
+
+    const accessToken = OAuth2_client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: config.user,
+        clientId: config.clientId,
+        clientSecret: config.clientSecret,
+        refreshToken: config.refreshToken,
+        accessToken: accessToken,
+      },
+    });
 
     //build your message
     const resetURL = `Nếu bạn gửi yêu cầu xác minh tài khoản Blenda, vui lòng bấm vào đường dẫn này trong vòng 10 phút! <a href="https://blendaproject.com/verify-account/${verificationToken}">Xác minh tài khoản ngay!</a>`;
@@ -531,7 +561,7 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
 
     await transporter.sendMail(msg);
 
-    res.json(resetURL);
+    res.json(ResetURL);
   } catch (error) {
     res.json(error);
   }
@@ -575,13 +605,13 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     console.log(token);
     await user.save();
 
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_2,
-        pass: process.env.PASS_2,
-      },
-    });
+    // let transporter = nodemailer.createTransport({
+    //   service: "gmail",
+    //   auth: {
+    //     user: process.env.EMAIL_2,
+    //     pass: process.env.PASS_2,
+    //   },
+    // });
 
     // const transporter = nodemailer.createTransport({
     //   host: 'mail.privateemail.com',
@@ -592,6 +622,20 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     //     pass: process.env.PASS
     //   }
     // });
+
+    const accessToken = OAuth2_client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        type: "OAuth2",
+        user: config.user,
+        clientId: config.clientId,
+        clientSecret: config.clientSecret,
+        refreshToken: config.refreshToken,
+        accessToken: accessToken,
+      },
+    });
 
     //build your message
     const resetURL = `Nếu bạn yêu cầu khôi phục mật khẩu tài khoản Blenda, vui lòng bấm vào đường dẫn này trong vòng 10 phút để đặt lại mật khẩu mới.
@@ -808,7 +852,7 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     };
 
     await transporter.sendMail(msg);
-    res.json(resetURL);
+    res.json(ResetURL);
   } catch (error) {
     res.json(error);
   }
