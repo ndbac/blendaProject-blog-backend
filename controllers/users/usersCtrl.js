@@ -7,11 +7,6 @@ const User = require("../../model/user/User");
 const validateMongodbId = require("../../utils/validateMongodbID");
 const cloudinaryUploadImg = require("../../utils/cloudinary");
 const blockUser = require("../../utils/blockUser");
-const { google } = require("googleapis");
-const config = require("../../config.js");
-const OAuth2 = google.auth.OAuth2;
-const OAuth2_client = new OAuth2(config.clientId, config.clientSecret);
-OAuth2_client.setCredentials({ refresh_token: config.refreshToken });
 
 //-------------------------------------
 //Register
@@ -294,6 +289,7 @@ const unBlockUserCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 
 const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
+
   const loginUserId = req.user.id;
   const user = await User.findById(loginUserId);
   console.log(user);
@@ -304,48 +300,14 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     await user.save();
     console.log(verificationToken);
 
-    //   let transporter = nodemailer.createTransport({
-    //     host: 'smtp.gmail.com',
-    //     port: 587,
-    //     secure: false,
-    //     requireTLS: true,
-    //     auth: {
-    //         user: process.env.EMAIL_2,
-    //         pass: process.env.PASS_2
-    //     }
-    // });
-
-    // let transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: process.env.EMAIL_2,
-    //     pass: process.env.PASS_2,
-    //   },
-    // });
-
-    // const transporter = nodemailer.createTransport({
-    //   host: 'mail.privateemail.com',
-    //   port: 465,
-    //   secure: true,
-    //   auth: {
-    //     user: process.env.EMAIL,
-    //     pass: process.env.PASS
-    //   }
-    // });
-
-    const accessToken = OAuth2_client.getAccessToken();
-
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        type: "OAuth2",
-        user: config.user,
-        clientId: config.clientId,
-        clientSecret: config.clientSecret,
-        refreshToken: config.refreshToken,
-        accessToken: accessToken,
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
       },
     });
+
 
     //build your message
     const resetURL = `Nếu bạn gửi yêu cầu xác minh tài khoản Blenda, vui lòng bấm vào đường dẫn này trong vòng 10 phút! <a href="https://blendaproject.com/verify-account/${verificationToken}">Xác minh tài khoản ngay!</a>`;
@@ -553,7 +515,7 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
     `;
 
     let msg = {
-      from: process.env.EMAIL_2, // Sender email
+      from: process.env.EMAIL, // Sender email
       to: user?.email, // Receiver email
       subject: "Verification your account", // Title email
       html: ResetURL, // Html in email
@@ -605,35 +567,11 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     console.log(token);
     await user.save();
 
-    // let transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: process.env.EMAIL_2,
-    //     pass: process.env.PASS_2,
-    //   },
-    // });
-
-    // const transporter = nodemailer.createTransport({
-    //   host: 'mail.privateemail.com',
-    //   port: 465,
-    //   secure: true,
-    //   auth: {
-    //     user: process.env.EMAIL,
-    //     pass: process.env.PASS
-    //   }
-    // });
-
-    const accessToken = OAuth2_client.getAccessToken();
-
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        type: "OAuth2",
-        user: config.user,
-        clientId: config.clientId,
-        clientSecret: config.clientSecret,
-        refreshToken: config.refreshToken,
-        accessToken: accessToken,
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
       },
     });
 
@@ -845,7 +783,7 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
     `;
 
     let msg = {
-      from: process.env.EMAIL_2, // Sender email
+      from: process.env.EMAIL, // Sender email
       to: email, // Receiver email
       subject: "Reset Password", // Title email
       html: ResetURL, // Html in email

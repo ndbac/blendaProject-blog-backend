@@ -2,11 +2,6 @@ const expressAsyncHandler = require("express-async-handler");
 const nodemailer = require("nodemailer");
 const Filter = require("bad-words");
 const EmailMsg = require("../../model/EmailMessaging/EmailMessaging");
-const { google } = require("googleapis");
-const config = require("../../config.js");
-const OAuth2 = google.auth.OAuth2;
-const OAuth2_client = new OAuth2(config.clientId, config.clientSecret);
-OAuth2_client.setCredentials({ refresh_token: config.refreshToken });
 
 const sendEmailMsgCtrl = expressAsyncHandler(async (req, res) => {
   const { to, subject, message } = req.body;
@@ -20,35 +15,11 @@ const sendEmailMsgCtrl = expressAsyncHandler(async (req, res) => {
     throw new Error(`Email sent failed, because it contains profanity words`);
 
   try {
-    // let transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: process.env.EMAIL_2,
-    //     pass: process.env.PASS_2,
-    //   },
-    // });
-
-    // const transporter = nodemailer.createTransport({
-    //   host: process.env.EMAIL_HOST,
-    //   port: 465,
-    //   secure: true,
-    //   auth: {
-    //     user: process.env.EMAIL,
-    //     pass: process.env.PASS
-    //   }
-    // });
-
-    const accessToken = OAuth2_client.getAccessToken();
-
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        type: "OAuth2",
-        user: config.user,
-        clientId: config.clientId,
-        clientSecret: config.clientSecret,
-        refreshToken: config.refreshToken,
-        accessToken: accessToken,
+        user: process.env.EMAIL_2,
+        pass: process.env.PASS_2,
       },
     });
 
