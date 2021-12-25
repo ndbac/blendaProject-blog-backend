@@ -1,6 +1,6 @@
 const blockUser = (user) => {
   if (user?.isBlocked) {
-    throw new Error(`Access denied as ${user?.firstName} is blocked`);
+    throw new Error(`${user?.firstName} - Bạn không thể đăng nhập do tài khoản của bạn đã bị chặn`);
   }
 };
 

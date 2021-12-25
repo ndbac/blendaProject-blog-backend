@@ -41,7 +41,7 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
   const userFound = await User.findOne({ email });
   //check if blocked
   if (userFound?.isBlocked && !userFound.isAdmin)
-    throw new Error("Access Denied, You have been blocked");
+    throw new Error("Bạn không thể đăng nhập do tài khoản của bạn đã bị chặn!");
   //Check if password is match
   if (userFound && (await userFound.isPasswordMatched(password))) {
     res.json({
@@ -56,7 +56,7 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
     });
   } else {
     res.status(401);
-    throw new Error("Invalid Login Credentials");
+    throw new Error("Tên đăng nhập hoặc mật khẩu sai");
   }
 });
 

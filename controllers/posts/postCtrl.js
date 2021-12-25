@@ -26,13 +26,13 @@ const createPostCtrl = expressAsyncHandler(async (req, res) => {
       isBlocked: true,
     });
     throw new Error(
-      "Creating failed because it contains profane words and you have been blocked"
+      "Nội dung bài viết chứa từ ngữ vi phạm. Bạn đã bị chặn khỏi website! Nếu bạn nhận thấy đã có sự nhầm lẫn, vui lòng liên hệ tới fanpage Blenda đã được giải đáp."
     );
   }
 
   //prevent user if his account is a starter account
   if (req?.user?.accountType === "Starter Account" && req?.user?.postCount >= 2)
-    throw new Error("Starter account only have the right to create 2 posts");
+    throw new Error("Starter account chỉ được tạo tối đa 2 bài viết");
 
   //1. Get the path to the image
   const localPath = `public/images/posts/${req.file.filename}`;
