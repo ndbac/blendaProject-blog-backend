@@ -542,7 +542,7 @@ const accountVerificationCtrl = expressAsyncHandler(async (req, res) => {
     accountVerificationToken: hashedToken,
     accountVerificationTokenExpires: { $gt: new Date() },
   });
-  if (!userFound) throw new Error("Token expired, try again later");
+  if (!userFound) throw new Error("Link xác minh đã hết hạn!");
   //update the property to true
   userFound.isAccountVerified = true;
   userFound.accountVerificationToken = undefined;
