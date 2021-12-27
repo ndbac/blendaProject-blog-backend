@@ -167,19 +167,17 @@ const updateUserCtrl = expressAsyncHandler(async (req, res) => {
 const updateUserPasswordCtrl = expressAsyncHandler(async (req, res) => {
   //destructure the login user
   const { _id } = req.user;
-  const { oldPassword, password } = req.body;
+  const { password } = req.body;
   validateMongodbId(_id);
   //Find the user by _id
   const user = await User.findById(_id);
 
-  if (password && (await user.isPasswordMatched(oldPassword))) {
+  if (password) {
     user.password = password;
     const updatedUser = await user.save();
     res.json(updatedUser);
   } else {
-    res.status(401);
-    throw new Error("Mật khẩu cũ không đúng");
-    // res.json(user);
+    res.json(user);
   }
 });
 
@@ -291,6 +289,7 @@ const unBlockUserCtrl = expressAsyncHandler(async (req, res) => {
 //------------------------------
 
 const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
+
   const loginUserId = req.user.id;
   const user = await User.findById(loginUserId);
   console.log(user);
@@ -308,6 +307,7 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
         pass: process.env.PASS,
       },
     });
+
 
     //build your message
     const resetURL = `Nếu bạn gửi yêu cầu xác minh tài khoản Blenda, vui lòng bấm vào đường dẫn này trong vòng 10 phút! <a href="https://blendaproject.com/verify-account/${verificationToken}">Xác minh tài khoản ngay!</a>`;
