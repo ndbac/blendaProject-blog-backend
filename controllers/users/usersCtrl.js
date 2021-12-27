@@ -16,7 +16,7 @@ const userRegisterCtrl = expressAsyncHandler(async (req, res) => {
   //Check if user Exist
   const userExists = await User.findOne({ email: req?.body?.email });
 
-  if (userExists) throw new Error("User already exists");
+  if (userExists) throw new Error("Tài khoản này đã tồn tại");
   try {
     //Register user
     const user = await User.create({
@@ -809,7 +809,7 @@ const passwordResetCtrl = expressAsyncHandler(async (req, res) => {
     passwordResetToken: hashedToken,
     passwordResetExpires: { $gt: Date.now() },
   });
-  if (!user) throw new Error("Token expired, try again later");
+  if (!user) throw new Error("Đường dẫn khôi phục mật khẩu đã hết hạn");
 
   //Update/change password
   user.password = password;
