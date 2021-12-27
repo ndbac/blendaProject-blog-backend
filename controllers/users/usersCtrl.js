@@ -51,6 +51,7 @@ const loginUserCtrl = expressAsyncHandler(async (req, res) => {
       email: userFound?.email,
       profilePhoto: userFound?.profilePhoto,
       isAdmin: userFound?.isAdmin,
+      opt: userFound?.opt,
       token: generateToken(userFound?._id),
       isVerified: userFound?.isAccountVerified,
     });
