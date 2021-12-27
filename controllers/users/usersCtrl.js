@@ -433,7 +433,7 @@ const generateVerificationTokenCtrl = expressAsyncHandler(async (req, res) => {
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <tr>
                             <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                                <img src="https://scontent.fhph1-1.fna.fbcdn.net/v/t39.30808-6/269818844_856973878364698_5434385132621092087_n.png?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_ohc=nb9wSZcZd7AAX87rv5p&tn=EJTReZDpCz2QlUDg&_nc_ht=scontent.fhph1-1.fna&oh=00_AT9NNeh3KCI2cXcAubdM-vBdOszFuINPcHJx147U_V2UDw&oe=61C879B8" width="200" height="120" style="display: block; border: 0px;" />
+                                <img src="https://i.imgur.com/et6a9FT.png" width="200" height="120" style="display: block; border: 0px;" />
                             </td>
                         </tr>
                     </table>
@@ -701,7 +701,7 @@ const forgetPasswordToken = expressAsyncHandler(async (req, res) => {
                     <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                         <tr>
                             <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                                <img src="https://scontent.fhph1-1.fna.fbcdn.net/v/t39.30808-6/269818844_856973878364698_5434385132621092087_n.png?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_ohc=nb9wSZcZd7AAX87rv5p&tn=EJTReZDpCz2QlUDg&_nc_ht=scontent.fhph1-1.fna&oh=00_AT9NNeh3KCI2cXcAubdM-vBdOszFuINPcHJx147U_V2UDw&oe=61C879B8" width="200" height="120" style="display: block; border: 0px;" />
+                                <img src="https://i.imgur.com/et6a9FT.png" width="200" height="120" style="display: block; border: 0px;" />
                             </td>
                         </tr>
                     </table>
